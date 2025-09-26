@@ -4,7 +4,7 @@ public class Animal {
     String name ;
     int age ;
     boolean isMammal ;
-    @Override
+
     public String toString() {
         return "Animal{" +
                 "family='" + family + '\'' +
