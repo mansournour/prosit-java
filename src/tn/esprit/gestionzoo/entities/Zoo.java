@@ -1,15 +1,13 @@
-import java.util.Arrays;
+package tn.esprit.gestionzoo.entities;
 
 public class Zoo {
-    Animal[] animals;
-    String name;
-    String city;
- static final   int nbrCages =25;
-    int nbrAnimals;
-
+    private Animal[] animals;
+    private String name;
+    private String city;
+    static final int nbrCages = 25;
+    private int nbrAnimals;
 
     public Zoo(String name, String city, int nbrCages, int nbrAnimals) {
-        //l'initialisation se faite dans le constructeur
         this.animals = new Animal[nbrCages];
         this.name = name;
         this.city = city;
@@ -18,75 +16,66 @@ public class Zoo {
 
     public String displayZoo() {
         return "Zoo{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", city='" + city + '\'' +
                 ", nbrCages=" + nbrCages +
                 '}';
     }
-    //instruction10
+
+    // instruction10
+    public boolean isZooFull() {
+        return nbrAnimals >= nbrCages;
+    }
 
     public boolean AddAnimal(Animal animal) {
-        animals[nbrAnimals] = animal;
-        //ajouter l'animal au tb
-        nbrAnimals++;
-        //incrementer le compteur
-        return true;
-        // retourner vrai
+        if (!isZooFull()) {
+            animals[nbrAnimals] = animal;
+            nbrAnimals++;
+            return true;
+        }
+        return false;
     }
 
+    // instruction11
     public int searchAnimal(Animal animal) {
-        animals[nbrAnimals] = animal;
         for (int i = 0; i < nbrAnimals; i++) {
-            if (animals[i].name.equals(animal.name)) {
+            if (animals[i].getName().equalsIgnoreCase(animal.getName())) {
                 return i;
             }
-
         }
         return -1;
-
     }
 
-    //instruction12
+    // instruction12
     public boolean AddAnimalSort(Animal animal) {
-        // Vérifier si le zoo est plein
         if (nbrAnimals >= nbrCages) {
             return false;
         }
-
-        // Vérifier si l'animal existe déjà
         for (int i = 0; i < nbrAnimals; i++) {
-            if (animals[i].name.equals(animal.name)) {
+            if (animals[i].getName().equalsIgnoreCase(animal.getName())) {
                 return false;
             }
         }
-
-        // Ajouter l'animal
         animals[nbrAnimals] = animal;
         nbrAnimals++;
         return true;
     }
-//instruction13
-    public boolean removeAnimal(Animal animal) {
 
+    // instruction13
+    public boolean removeAnimal(Animal animal) {
         for (int i = 0; i < nbrAnimals; i++) {
-            if (animals[i].name.equals(animal.name)) {
+            if (animals[i].getName().equalsIgnoreCase(animal.getName())) {
                 for (int j = i; j < nbrAnimals - 1; j++) {
                     animals[j] = animals[j + 1];
                 }
-
-                animals[nbrAnimals - 1] = null; // dernière case vide
+                animals[nbrAnimals - 1] = null;
                 nbrAnimals--;
-                System.out.println("Removed animal " + animal.name);
-                return true; // suppression réussie
+                System.out.println("Removed animal " + animal.getName());
+                return true;
             }
         }
-
-        System.out.println(animal.name + " is not in the zoo");
-        return false; // animal non trouvé
-    }
-
-    public boolean isZooFull() {
-        return nbrAnimals >= nbrCages;
+        System.out.println(animal.getName() + " is not in the zoo");
+        return false;
     }
 
     public static Zoo comparerZoo(Zoo z1, Zoo z2) {
@@ -96,5 +85,4 @@ public class Zoo {
             return z2;
         }
     }
-
 }
