@@ -1,7 +1,8 @@
 package tn.esprit.gestionzoo.main;
 
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+import tn.esprit.gestionzoo.entities.*;
+
+import javax.swing.text.StyledEditorKit;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,25 +23,36 @@ public class Main {
         //  System.out.println (myZoo.searchAnimal(a3)); //retourne l'indice de la 1  er lion trouver va rester 0 donc
         // Création du zoo (on donne son nom, sa ville, et son nombre de cages)
         /// ///apres les getters and setters
-            // Création du zoo
-            Zoo myZoo = new Zoo("Zoo de Tunis", "Tunis", 25, 0);
+        // Création du zoo
+        Zoo myZoo = new Zoo("Zoo de Tunis", "Tunis", 25, 0);
 
-            // Création des animaux
-            Animal a1 = new Animal("Félidé", true, 3, "lion");
-            Animal a2 = new Animal("Canidé", false, 2, "chien");
+        // Création des animaux
+        Animal a1 = new Animal("Félidé", true, 3, "lion");
+        Animal a2 = new Animal("Canidé", false, 2, "chien");
 
-            // Ajout des animaux
-            System.out.println("Ajout de a1 : " + myZoo.AddAnimal(a1));
-            System.out.println("Ajout de a2 : " + myZoo.AddAnimal(a2));
+        // Ajout des animaux
+        System.out.println("Ajout de a1 : " + myZoo.AddAnimal(a1));
+        System.out.println("Ajout de a2 : " + myZoo.AddAnimal(a2));
 
-            // Recherche d’un animal déjà ajouté
-            System.out.println("Indice de a1 : " + myZoo.searchAnimal(a1));
+        // Recherche d’un animal déjà ajouté
+        System.out.println("Indice de a1 : " + myZoo.searchAnimal(a1));
 
-            // Création d’un autre lion pour tester la recherche
-            Animal a3 = new Animal("Félidé", true, 2, "lion");
-            System.out.println("Indice de a3 : " + myZoo.searchAnimal(a3));
-        }
+        // Création d’un autre lion pour tester la recherche
+        Animal a3 = new Animal("Félidé", true, 2, "lion");
+        System.out.println("Indice de a3 : " + myZoo.searchAnimal(a3));
+        //Teste instruction 21
+        // apres l instruction 22  va donnée une erreur donc je dois passer les parametres
+
+        Dolphin d = new Dolphin("xxx",true,20 ,"nnn",302);
+        Pinguin p = new Pinguin("Pingo", true, 20 ,"xxx","hhh",20);
+        Terrestre t = new Terrestre("Lion", true ,20 ,"hh",12);
+
+
+        Aquatique aq = new Aquatique("vvv",true,20 , "bb","hhh");
+        System.out.println(d);
+        System.out.println(p);
+        System.out.println(t);
 
     }
 
-
+}
