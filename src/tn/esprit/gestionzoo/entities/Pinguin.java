@@ -14,4 +14,17 @@ private float swimmingDepth ;
                 "swimmingDepth=" + swimmingDepth +
                 '}';
     }
+    public float getSwimmingDepth() {
+        return swimmingDepth;
+    }
+
+    public void setSwimmingDepth(float swimmingDepth) {
+        this.swimmingDepth = swimmingDepth;
+    }
+    //la méthode doivent etre implimenter ici car elle est abstraite dans la classe super
+    @Override
+    public void swim(){
+        System.out.println("swim de la classe PINGUIN");
+    }
+
 }

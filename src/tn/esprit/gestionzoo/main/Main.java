@@ -43,16 +43,29 @@ public class Main {
         //Teste instruction 21
         // apres l instruction 22  va donnée une erreur donc je dois passer les parametres
 
-        Dolphin d = new Dolphin("xxx",true,20 ,"nnn",302);
+        //Dolphin d = new Dolphin("xxx",true,20 ,"nnn",302);
         Pinguin p = new Pinguin("Pingo", true, 20 ,"xxx","hhh",20);
         Terrestre t = new Terrestre("Lion", true ,20 ,"hh",12);
 
 
-        Aquatique aq = new Aquatique("vvv",true,20 , "bb","hhh");
-        System.out.println(d);
+      //  Aquatique aq = new Aquatique("vvv",true,20 , "bb","hhh")7
+        //System.out.println(d);
         System.out.println(p);
         System.out.println(t);
+//instruction 26
+        Zoo myzoo = new Zoo("Zoo de Tunis", "Tunis", 25, 0);
+        //creation de animal aquatique
+      //  Aquatique aq1 = new Aquatique("dauphin",true,22,"Flipper");
+      //  myzoo.addAquaticAnimal(aq1);
+        System.out.println("Aquatic ajouter au zoo");
+        //27
+        // Ajout d'animaux aquatiques
+     //   myZoo.addAquaticAnimal(new Aquatique("Poisson", false, 2, "Goldy"));
+      //  myZoo.addAquaticAnimal(new Aquatique("Dauphin", true, 5, "Flipper"));
+      //  myZoo.addAquaticAnimal(new Aquatique("Requin", false, 7, "Jaws"));
 
+        // Affichage de swim() pour tous
+        myZoo.showAllSwim();
     }
 
 }
