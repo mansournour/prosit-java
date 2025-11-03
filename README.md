@@ -49,5 +49,3 @@ Les principaux objectifs étaient de :
 
 ---
 
-## 🗂️ Structure du projet
-
