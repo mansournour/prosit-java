@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Java_programming_language_logo.svg" width="90">
-</p>
+
 
 <h1 align="center">🦁 Projet Java — Gestion de Zoo</h1>
 
