@@ -31,10 +31,10 @@ Les principaux objectifs étaient de :
 | ☕ **Langage principal** | Java SE 17 |
 | ⚙️ **Version JVM** | OpenJDK 64-Bit Server VM (build 17.0.2+8-LTS) |
 | 🧱 **Paradigme** | Programmation Orientée Objet (POO) |
-| 🧩 **IDE utilisé** | IntelliJ IDEA / Eclipse |
+| 🧩 **IDE utilisé** | IntelliJ IDEA  |
 | 📦 **Gestionnaire de projet** | Aucun (structure manuelle sans Maven) |
 | 🗂️ **Structure des packages** | `tn.esprit.gestionzoo.entities`, `tn.esprit.gestionzoo.main` |
-| 💻 **Système de test** | Windows 10 / Ubuntu 22.04 LTS |
+| 💻 **Système de test** | Windows 11  |
 
 ---
 
