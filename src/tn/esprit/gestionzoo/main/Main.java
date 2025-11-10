@@ -1,6 +1,12 @@
 package tn.esprit.gestionzoo.main;
 
+import tn.esprit.gestionzoo.entities.Aquatic;
+import tn.esprit.gestionzoo.entities.Food;
+import tn.esprit.gestionzoo.entities.Terrestrial;
+
+/*
 import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.entities.ZooFullException;
 
 import javax.swing.text.StyledEditorKit;
 
@@ -24,22 +30,17 @@ public class Main {
         // Création du zoo (on donne son nom, sa ville, et son nombre de cages)
         /// ///apres les getters and setters
         // Création du zoo
-        Zoo myZoo = new Zoo("Zoo de Tunis", "Tunis", 25, 0);
-
-        // Création des animaux
-        Animal a1 = new Animal("Félidé", true, 3, "lion");
-        Animal a2 = new Animal("Canidé", false, 2, "chien");
 
         // Ajout des animaux
-        System.out.println("Ajout de a1 : " + myZoo.AddAnimal(a1));
-        System.out.println("Ajout de a2 : " + myZoo.AddAnimal(a2));
+      //  System.out.println("Ajout de a1 : " + myZoo.AddAnimal(a1));
+      //  System.out.println("Ajout de a2 : " + myZoo.AddAnimal(a2));
 
         // Recherche d’un animal déjà ajouté
-        System.out.println("Indice de a1 : " + myZoo.searchAnimal(a1));
+     //   System.out.println("Indice de a1 : " + myZoo.searchAnimal(a1));
 
         // Création d’un autre lion pour tester la recherche
-        Animal a3 = new Animal("Félidé", true, 2, "lion");
-        System.out.println("Indice de a3 : " + myZoo.searchAnimal(a3));
+      //  Animal a3 = new Animal("Félidé", true, 2, "lion");
+     //   System.out.println("Indice de a3 : " + myZoo.searchAnimal(a3));
         //Teste instruction 21
         // apres l instruction 22  va donnée une erreur donc je dois passer les parametres
 
@@ -65,7 +66,43 @@ public class Main {
       //  myZoo.addAquaticAnimal(new Aquatique("Requin", false, 7, "Jaws"));
 
         // Affichage de swim() pour tous
-        myZoo.showAllSwim();
-    }
+        try {
+            // 🦁 Création d’un zoo
+            Zoo myZoo = new Zoo("Zoo de Tunis", "Tunis", 3, 0);
 
+            // 🐾 Création d’animaux valides
+            Animal a1 = new Animal("Félidé", true, 3, "Lion");
+            Animal a2 = new Animal("Canidé", false, 2, "Chien");
+
+            myZoo.addAnimal(a1);
+            myZoo.addAnimal(a2);
+
+            // 🐍 Tentative avec âge négatif
+            Animal a3 = new Animal("Reptile", false, -5, "Serpent"); // ⚠️ Devrait déclencher InvalidAgeException
+            myZoo.addAnimal(a3);
+
+        } catch (InvalidAgeException e) {
+            System.out.println("⚠️ Erreur d’âge : " + e.getMessage());
+        } catch (ZooFullException e) {
+            System.out.println("⚠️ Zoo plein : " + e.getMessage());
+        } finally {
+            System.out.println("✅ Programme terminé !");
+        }
+    }
+}
+*/
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        Aquatic dolphin = new Aquatic();
+        Terrestrial bear = new Terrestrial();
+
+        // Tester les méthodes
+        dolphin.eatMeat(Food.MEAT);  // doit afficher : Aquatic animal is eating meat.
+        dolphin.eatMeat(Food.PLANT); // doit afficher : Aquatic animal does not eat plants.
+
+        bear.eatMeat(Food.MEAT);     // Terrestrial animal is eating meat.
+        bear.eatPlant(Food.PLANT);   // Terrestrial animal is eating plants.
+        bear.eatPlantAndMeat(Food.BOTH); // Terrestrial animal is eating both plants and meat.
+    }
 }

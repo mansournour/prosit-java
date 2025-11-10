@@ -17,8 +17,10 @@ public class Animal {
                 ", isMammal=" + isMammal +
                 '}';
     }
-
-    public Animal(String family, boolean isMammal, int age, String name) {
+    public Animal(String family, boolean isMammal, int age, String name) throws InvalidAgeException {
+        if (age < 0) {
+            throw new InvalidAgeException("❌ Âge invalide : " + age + ". L'âge d'un animal ne peut pas être négatif !");
+        }
         this.family = family;
         this.isMammal = isMammal;
         this.age = age;

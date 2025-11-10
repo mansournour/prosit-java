@@ -5,7 +5,7 @@ public class Zoo {
     private Aquatique[] aquaticAnimal;
     private String name;
     private String city;
-    static final int nbrCages = 25;
+    static final int nbrCages = 3;
     private int nbrAnimals;
     private int nbrAquaticAnimals =0;
 
@@ -17,6 +17,14 @@ public class Zoo {
         this.nbrAnimals = 0;
     }
 
+    public int getNbrAnimals() {
+        return nbrAnimals;
+    }
+
+    public void setNbrAnimals(int nbrAnimals) {
+        this.nbrAnimals = nbrAnimals;
+    }
+
     public String displayZoo() {
         return "Zoo{" +
                 "name='" + name + '\'' +
@@ -25,11 +33,14 @@ public class Zoo {
                 '}';
     }
 
+    public Zoo() {
+    }
+
     // instruction10
     public boolean isZooFull() {
         return nbrAnimals >= nbrCages;
     }
-
+/*
     public boolean AddAnimal(Animal animal) {
         if (!isZooFull()) {
             animals[nbrAnimals] = animal;
@@ -38,7 +49,16 @@ public class Zoo {
         }
         return false;
     }
-
+*/
+    //instruction 32
+    public void addAnimal(Animal animal) throws ZooFullException {
+        if (nbrAnimals >= nbrCages) {
+            throw new ZooFullException("La zoo esta vacia");
+        }
+        animals[nbrAnimals] = animal;
+        nbrAnimals++;
+        System.out.println("L'animal est ajouté avec succés !");
+    }
     // instruction11
     public int searchAnimal(Animal animal) {
         for (int i = 0; i < nbrAnimals; i++) {
