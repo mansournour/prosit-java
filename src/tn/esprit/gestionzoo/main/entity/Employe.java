@@ -2,7 +2,7 @@ package tn.esprit.gestionzoo.main.entity;
 
 import java.util.Objects;
 
-public class Employe {
+public abstract class Employe implements Comparable<Employe> {
     private int id ;
     private String nom;
     private String prenom;

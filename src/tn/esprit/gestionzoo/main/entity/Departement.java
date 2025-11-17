@@ -1,10 +1,10 @@
 package tn.esprit.gestionzoo.main.entity;
 
 public class Departement {
-    public  int id;
-    public  String nom;
-    public int nbrEmployee;
-    public Departement(int id , String nom, int nbrEmployee) {
+    private  int id;
+    private  String nom;
+    private int nbrEmployee;
+    public  Departement(int id , String nom, int nbrEmployee) {
         this.id = id;
         this.nom = nom;
         this.nbrEmployee = nbrEmployee;
