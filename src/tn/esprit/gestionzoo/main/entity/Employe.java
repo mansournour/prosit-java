@@ -48,6 +48,10 @@ public abstract class Employe implements Comparable<Employe> {
     public void setId(int id) {
         this.id = id;
     }
+    @Override
+    public int compareTo(Employe o) {
+        return this.id - o.id;
+    }
 
     public Employe(int id, String nom, String prenom, String nomDepartement, int grade) {
         this.id = id;
