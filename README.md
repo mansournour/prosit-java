@@ -9,6 +9,10 @@
 
 ---
 
+👩‍💻 Développé par : Nour Mansour 
+
+🔗 LinkedIn : https://www.linkedin.com/in/nour-mansour-75aa31242/
+
 ## 🎯 Objectif du projet
 
 Ce mini-projet a été développé durant les **7 premières semaines du cours de Java**, dans le but d’apprendre et de pratiquer les bases de la **programmation orientée objet (POO)**.
